@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @MaximTkhir
-- 👀 I’m interested in I'm interested in:
+- 👀 I'm interested in:
 - 🎮creating games🎮,🎨drawing art🎨. I also like to make  ⚔️3D models⚔️ and 🎬3D animations🎬.
 - 🎓 I am currently studying to be a programmer and am engaged in self-education. 
 - 💞️ I’m looking to collaborate on Different projects on games or the creation of something interesting to me.

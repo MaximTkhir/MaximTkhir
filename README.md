@@ -1,4 +1,4 @@
-<h1 align="center">Hey <img src="https://camo.githubusercontent.com/bbc70b6515e817d1943dadf19ca39d94cb2154df20bb1b65f942e418810d2049/68747470733a2f2f656d6f6a69732e736c61636b6d6f6a69732e636f6d2f656d6f6a69732f696d616765732f313538383331353032342f383832332f68797065726b697474792e6769663f31353838333135303234" height="30px" width="30px"> I'm ObserverMT</h1>
+<h1 align="center">Hey <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" height="30px" width="30px"> I'm ObserverMT</h1>
 <h3 align="center">GameDev Developer | Programmer</h3>
 
 <p align="center">
@@ -7,21 +7,24 @@
   </a>
 </p>
 
-<img src="https://i.pinimg.com/originals/64/72/36/647236fc1c3aec4ac575c4ed5a8ca524.gif" alt="Banner" width="100%" />
+<img src="https://i.pinimg.com/originals/0c/f6/dc/0cf6dcd008c19dedbd458932a787cc8a.gif" alt="Banner" width="100%" />
 
 ## 📌 About Me
-- [ STATUS: RECONSTRUCTING ] [ MODE: GAME DEVELOPMENT ] [ SIGNAL: ACTIVE ]
-- The old archive is being rewritten. Projects, experiments and unfinished worlds are slowly returning.
-- I am Maxim - a programmer turned Game Developer.
-- My primary tools are Lua/Lua-u. (also: C#,Python, Java, JavaScript, 1C, C++, Arduino C) Currently focused on games, systems, 3D and interactive worlds.
+- Game Developer and Programmer focused on Roblox Studio and Unity. I build gameplay systems, tools, 3D experiences and interactive worlds.
+- My primary language is Luau, with experience in C#, Python, JavaScript, Java, C++, 1C and Arduino C. I also work across creative disciplines, including 2D and 3D art, animation, music and audio, and VTuber model rigging.
 
 
 ## 🧠 My Focus Areas
 - Game Development
-- Programmer
-- 2D
-- 3D
-- Sound Maker
+- Programming
+- Gameplay Programming
+- Roblox Development
+- Unity Development
+- 3D Art
+- 3D Animation
+- 2D Art
+- Music & Audio
+- VTuber Rigging
 
 
 ## 📊 GitHub Stats & Trophies
@@ -29,13 +32,9 @@
   <a href="https://github.com/MaximTkhir">
     <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=MaximTkhir&cache_seconds=7200&layout=compact&theme=radical&border_radius=10" alt="MaximTkhir's GitHub Stats" />
   </a>
-  <img src="https://streak-stats.demolab.com/?user=MaximTkhir&theme=radical&hide_border=true&cache_seconds=86400" alt="MaximTkhir's GitHub Streak" width="49%" />
 </p>
 <p align="center">
   <img src="https://trophy.ryglcloud.net/?username=MaximTkhir&theme=radical&no-frame=true&no-bg=true&margin-w=4&cache_seconds=86400" alt="ObserverMT's GitHub Trophies" />
-</p>
-<p align="center">
-  <img height="280em" src="https://github-readme-activity-graph.vercel.app/graph?username=MaximTkhir&theme=radical&radius=10" alt="MaximTkhir's Activity Graph" />
 </p>
 
 
@@ -112,15 +111,13 @@
 </p>
 
 ## 💬 Quote
-> "When you fall off the bridge, you suddenly realize all your problems can be solved, except for one. You're already falling"
+> "Observe the world. Understand the system. Build what comes next."
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tobiasmeyhoefer/tobiasmeyhoefer/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tobiasmeyhoefer/tobiasmeyhoefer/output/github-snake.svg" />
-  <img alt="github-snake" src="https://raw.githubusercontent.com/tobiasmeyhoefer/tobiasmeyhoefer/output/github-snake.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/abozanona/abozanona/output/pacman-contribution-graph-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/abozanona/abozanona/output/pacman-contribution-graph.svg">
+  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/abozanona/abozanona/output/pacman-contribution-graph.svg">
 </picture>
-
-<p align="center"><a href="https://www.buymeacoffee.com/chamidudili" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a></p>
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" alt="Bottom Line" width="100%" />

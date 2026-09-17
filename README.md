@@ -6,7 +6,7 @@
 
 # OBSERVERMT
 
-### `// DEVELOPMENT ARCHIVE`
+### `DEVELOPMENT ARCHIVE`
 
 **Solo Game Developer · Programmer**
 
@@ -20,22 +20,33 @@
 
 <br>
 
-## 📌 About Me
-- Game Developer and Programmer focused on Roblox Studio and Unity. I build gameplay systems, tools, 3D experiences and interactive worlds.
-- My primary language is Luau, with experience in C#, Python, JavaScript, Java, C++, 1C and Arduino C. I also work across creative disciplines, including 2D and 3D art, animation, music and audio, and VTuber model rigging.
+## 📌 01. ABOUT THE OBSERVER
+
+I'm **ObserverMT** - a programmer and solo game developer focused primarily on **Roblox Studio**, with additional experience in Unity and other development environments.
+
+I have a formal background in **programming** and am continuing my education in **Game Development**. My main specialization is programming, but solo development has led me into many adjacent creative and technical fields.
+
+My work can involve **gameplay programming, system architecture, automation, security, optimization, 3D modeling, environment building, animation, VFX, 2D art, UI, music and audio, narrative development, and technical documentation**.
+
+Programming remains my strongest field. The other disciplines are areas I actively use and continue to develop through practical projects.
+
+> `CURRENT OBJECTIVE | Turn ideas into complete, playable experiences.`
 
 
-## 🧠 My Focus Areas
-- Game Development
-- Programming
-- Gameplay Programming
-- Roblox Development
-- Unity Development
-- 3D Art
-- 3D Animation
-- 2D Art
-- Music & Audio
-- VTuber Rigging
+## 🎮 02. SOLO DEVELOPMENT
+
+I primarily work as a **solo developer**, which means taking responsibility for multiple parts of a game's production - from the initial idea and technical foundation to a playable implementation.
+
+Rather than focusing exclusively on code, I work across several areas of development:
+
+- **Programming** - gameplay systems, mechanics, architecture, security, automation and optimization.
+- **3D & World Building** - modeling, environment design, map building and scene composition.
+- **2D & UI** - artwork, icons, interface elements and visual presentation.
+- **Animation & VFX** - character/object animation and visual effects.
+- **Music & Audio** - music, sound design and audio implementation.
+- **Narrative & Direction** - concepts, story elements, atmosphere and overall project direction.
+
+> `DEVELOPMENT PIPELINE | IDEA → DESIGN → BUILD → TEST → ITERATE → PLAYABLE EXPERIENCE`
 
 
 ## 📊 GitHub Stats & Trophies

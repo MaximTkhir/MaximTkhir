@@ -234,6 +234,7 @@
 
   <!-- Lines of code -->
   <text
+    id="public-code-lines-value"
     x="245"
     y="310"
     fill="#f0f6fc"
@@ -249,7 +250,7 @@
     fill="#8b949e"
     font-family="Consolas, Monaco, monospace"
     font-size="11">
-    LINES OF CODE
+    PUBLIC CODE LINES
   </text>
 
   <!-- Status -->

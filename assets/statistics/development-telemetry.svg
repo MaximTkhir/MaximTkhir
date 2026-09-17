@@ -171,15 +171,15 @@
     TOTAL REPOSITORIES
   </text>
 
-  <!-- Commits -->
-  <text
+   <text
+    id="featured-projects-value"
     x="700"
     y="184"
     fill="#f0f6fc"
     font-family="Consolas, Monaco, monospace"
     font-size="30"
     font-weight="700">
-    ---
+    02
   </text>
 
   <text
@@ -188,7 +188,7 @@
     fill="#8b949e"
     font-family="Consolas, Monaco, monospace"
     font-size="11">
-    TOTAL COMMITS
+    FEATURED PROJECTS
   </text>
 
   <!-- Divider -->

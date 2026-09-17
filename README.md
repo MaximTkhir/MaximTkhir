@@ -142,16 +142,21 @@ The project was developed as a complete client-server system rather than a stati
   <sub>Source code currently private / project development paused.</sub>
 </p>
 
-## 📊 GitHub Stats & Trophies
+## 📊 04. DEVELOPMENT STATISTICS
 <p align="center">
-  <a href="https://github.com/MaximTkhir">
-    <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=MaximTkhir&cache_seconds=7200&layout=compact&theme=radical&border_radius=10" alt="MaximTkhir's GitHub Stats" />
-  </a>
-</p>
-<p align="center">
-  <img src="https://trophy.ryglcloud.net/?username=MaximTkhir&theme=radical&no-frame=true&no-bg=true&margin-w=4&cache_seconds=86400" alt="ObserverMT's GitHub Trophies" />
+  <code>GITHUB ACTIVITY</code>
+  &nbsp;·&nbsp;
+  <code>DEVELOPMENT RECORDS</code>
+  &nbsp;·&nbsp;
+  <code>LIVE DATA</code>
 </p>
 
+<p align="center">
+  <sub>
+    Statistics are generated from GitHub activity and development records.
+    Values may change as the archive is updated.
+  </sub>
+</p>
 
 ## 🛠️ Languages & Tools
 

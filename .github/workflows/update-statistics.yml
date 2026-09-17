@@ -6,6 +6,11 @@ on:
 permissions:
   contents: write
 
+env:
+  # Manual value.
+  # Change this number when your private repository count changes.
+  PRIVATE_REPOS: "53"
+
 jobs:
   update-statistics:
     runs-on: ubuntu-latest
@@ -14,7 +19,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
-      - name: Collect public GitHub statistics
+      - name: Collect GitHub statistics
         id: stats
         shell: bash
         run: |
@@ -31,20 +36,30 @@ jobs:
             exit 1
           fi
 
+          if ! [[ "$PRIVATE_REPOS" =~ ^[0-9]+$ ]]; then
+            echo "PRIVATE_REPOS must be a number."
+            exit 1
+          fi
+
+          TOTAL_REPOS=$((PUBLIC_REPOS + PRIVATE_REPOS))
+
           printf -v PUBLIC_REPOS_PADDED "%02d" "$PUBLIC_REPOS"
+          printf -v PRIVATE_REPOS_PADDED "%02d" "$PRIVATE_REPOS"
+          printf -v TOTAL_REPOS_PADDED "%02d" "$TOTAL_REPOS"
 
           echo "public_repos=$PUBLIC_REPOS_PADDED" >> "$GITHUB_OUTPUT"
+          echo "private_repos=$PRIVATE_REPOS_PADDED" >> "$GITHUB_OUTPUT"
+          echo "total_repos=$TOTAL_REPOS_PADDED" >> "$GITHUB_OUTPUT"
 
-          echo "Public repositories: $PUBLIC_REPOS_PADDED"
+          echo "Public repositories:  $PUBLIC_REPOS_PADDED"
+          echo "Private repositories: $PRIVATE_REPOS_PADDED"
+          echo "Total repositories:   $TOTAL_REPOS_PADDED"
 
       - name: Update telemetry SVG
         shell: bash
         run: |
-          SVG="assets/statistics/development-telemetry.svg"
-
           python3 <<'PY'
           from pathlib import Path
-          import os
           import re
           from datetime import datetime, timezone
 
@@ -52,12 +67,31 @@ jobs:
           svg = path.read_text(encoding="utf-8")
 
           public_repos = "${{ steps.stats.outputs.public_repos }}"
+          private_repos = "${{ steps.stats.outputs.private_repos }}"
+          total_repos = "${{ steps.stats.outputs.total_repos }}"
+
           last_sync = datetime.now(timezone.utc).strftime("%d %b %Y").upper()
 
           # PUBLIC REPOSITORIES
           svg = re.sub(
               r'(<text\s+x="30"\s+y="184"[\s\S]*?>)[\s\S]*?(</text>)',
               rf'\g<1>\n    {public_repos}\n  \g<2>',
+              svg,
+              count=1
+          )
+
+          # PRIVATE REPOSITORIES
+          svg = re.sub(
+              r'(<text\s+x="245"\s+y="184"[\s\S]*?>)[\s\S]*?(</text>)',
+              rf'\g<1>\n    {private_repos}\n  \g<2>',
+              svg,
+              count=1
+          )
+
+          # TOTAL REPOSITORIES
+          svg = re.sub(
+              r'(<text\s+x="480"\s+y="184"[\s\S]*?>)[\s\S]*?(</text>)',
+              rf'\g<1>\n    {total_repos}\n  \g<2>',
               svg,
               count=1
           )

@@ -205,6 +205,16 @@ jobs:
           total_repos = "${{ steps.stats.outputs.total_repos }}"
           featured_projects = "${{ steps.stats.outputs.featured_projects }}"
           projects_built = "${{ steps.stats.outputs.projects_built }}"
+          public_code_lines = int("${{ steps.code.outputs.public_code_lines }}")
+
+          def format_number(value):
+              if value >= 1_000_000:
+                  return f"{value / 1_000_000:.1f}M"
+              if value >= 1_000:
+                  return f"{value / 1_000:.1f}K"
+              return str(value)
+          
+          public_code_lines_display = format_number(public_code_lines)
 
           last_sync = datetime.now(timezone.utc).strftime("%d %b %Y").upper()
 
@@ -244,6 +254,14 @@ jobs:
           svg = re.sub(
               r'(<text\s+x="30"\s+y="310"[\s\S]*?>)[\s\S]*?(</text>)',
               rf'\g<1>\n    {projects_built}\n  \g<2>',
+              svg,
+              count=1
+          )
+
+          # PUBLIC CODE LINES
+          svg = re.sub(
+              r'(<text\s+id="public-code-lines-value"[\s\S]*?>)[\s\S]*?(</text>)',
+              rf'\g<1>\n    {public_code_lines_display}\n  \g<2>',
               svg,
               count=1
           )

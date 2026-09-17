@@ -143,19 +143,20 @@ The project was developed as a complete client-server system rather than a stati
 </p>
 
 ## 📊 04. DEVELOPMENT STATISTICS
-<p align="center">
-  <code>GITHUB ACTIVITY</code>
-  &nbsp;·&nbsp;
-  <code>DEVELOPMENT RECORDS</code>
-  &nbsp;·&nbsp;
-  <code>LIVE DATA</code>
-</p>
 
 <p align="center">
   <sub>
     Statistics are generated from GitHub activity and development records.
     Values may change as the archive is updated.
   </sub>
+</p>
+
+<br>
+
+<p align="center">
+  <img src="./assets/statistics/development-telemetry.svg"
+       width="90%"
+       alt="ObserverMT Development Telemetry" />
 </p>
 
 ## 🛠️ Languages & Tools

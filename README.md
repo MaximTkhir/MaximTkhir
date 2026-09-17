@@ -91,6 +91,57 @@ The project is being built from the ground up as a complete game experience - in
   <sub>Repository currently private / not publicly available.</sub>
 </p>
 
+<br>
+
+### PROJECT 02 - GAMEDEVPORTFOLIO
+
+> `DEVELOPMENT PAUSED`　`FULL-STACK WEB`　`PORTFOLIO PLATFORM`
+
+**GameDevPortfolio** is a full-stack web platform designed for developers, artists and other specialists in the game industry to publish their work, build portfolios and interact with other users.
+
+The project was developed as a complete client-server system rather than a static portfolio website. It includes **authentication, profiles, posts, media content, comments, likes, friendships, chats, reports, moderation tools, account security and administrative functionality**.
+
+<p align="center">
+  <img src="./assets/projects/gamedevportfolio1.png"
+       width="72%"
+       alt="GameDevPortfolio main page" />
+</p>
+
+<p align="center">
+  <img src="./assets/projects/gamedevportfolio2.png"
+       width="55%"
+       alt="GameDevPortfolio user profile" />
+</p>
+
+<p align="center">
+  <img src="./assets/projects/gamedevportfolio-code1.png"
+       width="21%"
+       alt="GameDevPortfolio frontend and backend architecture" />
+  &nbsp;&nbsp;&nbsp;
+  <img src="./assets/projects/gamedevportfolio-code2.png"
+       width="21%"
+       alt="GameDevPortfolio backend architecture" />
+</p>
+
+<p align="center">
+  <sub>PLATFORM PREVIEW　·　USER SYSTEM　·　FULL-STACK ARCHITECTURE</sub>
+</p>
+
+<p align="center">
+  <code>Next.js</code>
+  <code>TypeScript</code>
+  <code>ASP.NET Core</code>
+  <code>.NET 8</code>
+  <code>SQL Server</code>
+  <code>EF Core</code>
+  <code>REST API</code>
+  <code>JWT</code>
+</p>
+
+<p align="center">
+  <sub>Source code currently private / project development paused.</sub>
+</p>
+
 ## 📊 GitHub Stats & Trophies
 <p align="center">
   <a href="https://github.com/MaximTkhir">

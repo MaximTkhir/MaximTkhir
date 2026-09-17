@@ -2,16 +2,23 @@
   <img src="./assets/banners/observermt-banner1.jpg" alt="ObserverMT Development Archive" width="100%" /> 
 </p>
 
-<h1 align="center">Hey <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" height="30px" width="30px"> I'm ObserverMT</h1>
-<h3 align="center">GameDev Developer | Programmer</h3>
+<div align="center">
 
-<p align="center">
-  <a href="https://komarev.com/ghpvc/?username=MaximTkhir">
-    <img src="https://komarev.com/ghpvc/?username=MaximTkhir&label=Profile%20views&color=00FFFF&style=flat-square" alt="MaximTkhir's profile views" />
-  </a>
-</p>
+# OBSERVERMT
 
-<img src="https://i.pinimg.com/originals/0c/f6/dc/0cf6dcd008c19dedbd458932a787cc8a.gif" alt="Banner" width="100%" />
+### `// DEVELOPMENT ARCHIVE`
+
+**Solo Game Developer · Programmer**
+
+`ROBLOX STUDIO`　·　`LUAU`　·　`GAME DEVELOPMENT`
+
+<br>
+
+<img src="https://komarev.com/ghpvc/?username=MaximTkhir&label=OBSERVERS%20DETECTED%20%2F%2F&color=111111&style=for-the-badge" alt="Observers Detected" />
+
+</div>
+
+<br>
 
 ## 📌 About Me
 - Game Developer and Programmer focused on Roblox Studio and Unity. I build gameplay systems, tools, 3D experiences and interactive worlds.

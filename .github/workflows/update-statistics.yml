@@ -9,9 +9,10 @@ permissions:
   contents: write
 
 env:
-  # Manual value.
-  # Change this number when your private repository count changes.
+  # Manual development records.
+  # Update these values when your archive changes.
   PRIVATE_REPOS: "53"
+  PROJECTS_BUILT: "17"
 
 jobs:
   update-statistics:
@@ -43,6 +44,11 @@ jobs:
             exit 1
           fi
 
+          if ! [[ "$PROJECTS_BUILT" =~ ^[0-9]+$ ]]; then
+            echo "PROJECTS_BUILT must be a number."
+            exit 1
+          fi
+
           TOTAL_REPOS=$((PUBLIC_REPOS + PRIVATE_REPOS))
           
           FEATURED_PROJECTS=$(grep -E '^### PROJECT [0-9]+' README.md | wc -l)
@@ -51,16 +57,19 @@ jobs:
           printf -v PRIVATE_REPOS_PADDED "%02d" "$PRIVATE_REPOS"
           printf -v TOTAL_REPOS_PADDED "%02d" "$TOTAL_REPOS"
           printf -v FEATURED_PROJECTS_PADDED "%02d" "$FEATURED_PROJECTS"
+          printf -v PROJECTS_BUILT_PADDED "%02d" "$PROJECTS_BUILT"
 
           echo "public_repos=$PUBLIC_REPOS_PADDED" >> "$GITHUB_OUTPUT"
           echo "private_repos=$PRIVATE_REPOS_PADDED" >> "$GITHUB_OUTPUT"
           echo "total_repos=$TOTAL_REPOS_PADDED" >> "$GITHUB_OUTPUT"
           echo "featured_projects=$FEATURED_PROJECTS_PADDED" >> "$GITHUB_OUTPUT"
+          echo "projects_built=$PROJECTS_BUILT_PADDED" >> "$GITHUB_OUTPUT"
 
           echo "Public repositories:  $PUBLIC_REPOS_PADDED"
           echo "Private repositories: $PRIVATE_REPOS_PADDED"
           echo "Total repositories:   $TOTAL_REPOS_PADDED"
           echo "Featured projects:     $FEATURED_PROJECTS_PADDED"
+          echo "Projects built:        $PROJECTS_BUILT_PADDED"
 
       - name: Update telemetry SVG
         shell: bash
@@ -77,6 +86,7 @@ jobs:
           private_repos = "${{ steps.stats.outputs.private_repos }}"
           total_repos = "${{ steps.stats.outputs.total_repos }}"
           featured_projects = "${{ steps.stats.outputs.featured_projects }}"
+          projects_built = "${{ steps.stats.outputs.projects_built }}"
 
           last_sync = datetime.now(timezone.utc).strftime("%d %b %Y").upper()
 
@@ -108,6 +118,14 @@ jobs:
           svg = re.sub(
               r'(<text\s+id="featured-projects-value"[\s\S]*?>)[\s\S]*?(</text>)',
               rf'\g<1>\n    {featured_projects}\n  \g<2>',
+              svg,
+              count=1
+          )
+
+          # PROJECTS BUILT
+          svg = re.sub(
+              r'(<text\s+x="30"\s+y="310"[\s\S]*?>)[\s\S]*?(</text>)',
+              rf'\g<1>\n    {projects_built}\n  \g<2>',
               svg,
               count=1
           )

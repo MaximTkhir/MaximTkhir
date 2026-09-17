@@ -1,3 +1,7 @@
+<p align="center"> 
+  <img src="./assets/banners/observermt-banner1.jpg" alt="ObserverMT Development Archive" width="100%" /> 
+</p>
+
 <h1 align="center">Hey <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" height="30px" width="30px"> I'm ObserverMT</h1>
 <h3 align="center">GameDev Developer | Programmer</h3>
 

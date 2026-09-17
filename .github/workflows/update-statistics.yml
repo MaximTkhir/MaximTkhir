@@ -70,7 +70,125 @@ jobs:
           echo "Total repositories:   $TOTAL_REPOS_PADDED"
           echo "Featured projects:     $FEATURED_PROJECTS_PADDED"
           echo "Projects built:        $PROJECTS_BUILT_PADDED"
+           
+      - name: Count public code lines
+        id: code
+        shell: bash
+        run: |
+          set -euo pipefail
 
+          USERNAME="${{ github.repository_owner }}"
+          WORKDIR="$RUNNER_TEMP/observermt-public-repos"
+
+          mkdir -p "$WORKDIR"
+
+          echo "Fetching public repositories for $USERNAME..."
+
+          curl -fsSL \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/users/$USERNAME/repos?type=owner&per_page=100" \
+            > "$WORKDIR/repos.json"
+
+          mapfile -t REPOS < <(
+            jq -r '
+              .[]
+              | select(.fork == false)
+              | .clone_url
+            ' "$WORKDIR/repos.json"
+          )
+
+          TOTAL_LINES=0
+          COUNTED_REPOS=0
+
+          for REPO_URL in "${REPOS[@]}"; do
+            REPO_NAME="$(basename "$REPO_URL" .git)"
+
+            # The profile repository contains this README/statistics system,
+            # not a development project. Do not count it as source code.
+            if [[ "$REPO_NAME" == "$USERNAME" ]]; then
+              echo "Skipping profile repository: $REPO_NAME"
+              continue
+            fi
+
+            echo "Analyzing: $REPO_NAME"
+
+            REPO_DIR="$WORKDIR/$REPO_NAME"
+
+            if ! git clone \
+              --depth 1 \
+              --quiet \
+              "$REPO_URL" \
+              "$REPO_DIR"; then
+              echo "Warning: failed to clone $REPO_NAME"
+              continue
+            fi
+
+            REPO_LINES=$(
+              find "$REPO_DIR" \
+                -type d \( \
+                  -name .git \
+                  -o -name .github \
+                  -o -name node_modules \
+                  -o -name bin \
+                  -o -name obj \
+                  -o -name dist \
+                  -o -name build \
+                  -o -name coverage \
+                  -o -name .next \
+                  -o -name vendor \
+                  -o -name packages \
+                \) -prune \
+                -o \
+                -type f \( \
+                  -name '*.luau' \
+                  -o -name '*.lua' \
+                  -o -name '*.cs' \
+                  -o -name '*.py' \
+                  -o -name '*.js' \
+                  -o -name '*.jsx' \
+                  -o -name '*.ts' \
+                  -o -name '*.tsx' \
+                  -o -name '*.java' \
+                  -o -name '*.c' \
+                  -o -name '*.h' \
+                  -o -name '*.cpp' \
+                  -o -name '*.hpp' \
+                  -o -name '*.php' \
+                  -o -name '*.go' \
+                  -o -name '*.kt' \
+                  -o -name '*.kts' \
+                  -o -name '*.sql' \
+                  -o -name '*.pas' \
+                  -o -name '*.bsl' \
+                  -o -name '*.ino' \
+                  -o -name '*.html' \
+                  -o -name '*.htm' \
+                  -o -name '*.css' \
+                  -o -name '*.scss' \
+                  -o -name '*.sass' \
+                \) \
+                -print0 \
+              | xargs -0 -r wc -l \
+              | awk '
+                  $2 != "total" { sum += $1 }
+                  END { print sum + 0 }
+                '
+            )
+
+            echo "  Code lines: $REPO_LINES"
+
+            TOTAL_LINES=$((TOTAL_LINES + REPO_LINES))
+            COUNTED_REPOS=$((COUNTED_REPOS + 1))
+
+            rm -rf "$REPO_DIR"
+          done
+
+          echo "--------------------------------"
+          echo "Repositories analyzed: $COUNTED_REPOS"
+          echo "Public code lines:      $TOTAL_LINES"
+
+          echo "public_code_lines=$TOTAL_LINES" >> "$GITHUB_OUTPUT"
+          
       - name: Update telemetry SVG
         shell: bash
         run: |

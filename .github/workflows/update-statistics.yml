@@ -1,0 +1,89 @@
+name: Update Development Statistics
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-statistics:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Collect public GitHub statistics
+        id: stats
+        shell: bash
+        run: |
+          USERNAME="${{ github.repository_owner }}"
+
+          PUBLIC_REPOS=$(curl -s \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/users/$USERNAME" \
+            | jq -r '.public_repos')
+
+          if ! [[ "$PUBLIC_REPOS" =~ ^[0-9]+$ ]]; then
+            echo "Failed to retrieve public repository count."
+            exit 1
+          fi
+
+          printf -v PUBLIC_REPOS_PADDED "%02d" "$PUBLIC_REPOS"
+
+          echo "public_repos=$PUBLIC_REPOS_PADDED" >> "$GITHUB_OUTPUT"
+
+          echo "Public repositories: $PUBLIC_REPOS_PADDED"
+
+      - name: Update telemetry SVG
+        shell: bash
+        run: |
+          SVG="assets/statistics/development-telemetry.svg"
+
+          python3 <<'PY'
+          from pathlib import Path
+          import os
+          import re
+          from datetime import datetime, timezone
+
+          path = Path("assets/statistics/development-telemetry.svg")
+          svg = path.read_text(encoding="utf-8")
+
+          public_repos = "${{ steps.stats.outputs.public_repos }}"
+          last_sync = datetime.now(timezone.utc).strftime("%d %b %Y").upper()
+
+          # PUBLIC REPOSITORIES
+          svg = re.sub(
+              r'(<text\s+x="30"\s+y="184"[\s\S]*?>)[\s\S]*?(</text>)',
+              rf'\g<1>\n    {public_repos}\n  \g<2>',
+              svg,
+              count=1
+          )
+
+          # LAST SYNC
+          svg = re.sub(
+              r'(<text\s+x="700"\s+y="310"[\s\S]*?>)[\s\S]*?(</text>)',
+              rf'\g<1>\n    {last_sync}\n  \g<2>',
+              svg,
+              count=1
+          )
+
+          path.write_text(svg, encoding="utf-8")
+          PY
+
+      - name: Commit updated statistics
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No telemetry changes detected."
+            exit 0
+          fi
+
+          git config user.name "ObserverMT Telemetry"
+          git config user.email "actions@users.noreply.github.com"
+
+          git add assets/statistics/development-telemetry.svg
+          git commit -m "Update development telemetry"
+          git push

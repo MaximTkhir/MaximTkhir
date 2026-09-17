@@ -48,6 +48,48 @@ Rather than focusing exclusively on code, I work across several areas of develop
 
 > `DEVELOPMENT PIPELINE | IDEA → DESIGN → BUILD → TEST → ITERATE → PLAYABLE EXPERIENCE`
 
+## 🎮 03. FEATURED PROJECTS
+
+> `LIVE ARCHIVE` · Featured projects, previews and development material may change over time.
+### PROJECT 01 - COLLAPSE
+
+> `IN DEVELOPMENT`　`ROBLOX`　`ASYMMETRIC SURVIVAL`
+
+**Collapse** is a solo-developed asymmetric survival game for Roblox.  
+Players must survive against a killer and find a way to escape, while each world introduces its own atmosphere, environment and gameplay conditions.
+
+The project is being built from the ground up as a complete game experience - including gameplay systems, environments, characters, visual effects, audio, art and optimization.
+
+<p align="center">
+  <img src="./assets/projects/collapsepict1.jpg"
+       width="55%"
+       alt="Collapse world preview" />
+</p>
+
+<p align="center">
+  <img src="./assets/projects/collapsepict3test.gif"
+       width="42%"
+       alt="Collapse killer preview" />
+</p>
+
+<p align="center">
+  <sub>WORLD PREVIEW　·　DEVELOPMENT FOOTAGE　·　SUBJECT PREVIEW</sub>
+</p>
+
+<p align="center">
+  <code>Roblox Studio</code>
+  <code>Luau</code>
+  <code>Roblox Services</code>
+  <code>DataStore</code>
+  <code>Blender</code>
+  <code>Aseprite</code>
+  <code>FL Studio</code>
+  <code>Krita</code>
+</p>
+
+<p align="center">
+  <sub>Repository currently private / not publicly available.</sub>
+</p>
 
 ## 📊 GitHub Stats & Trophies
 <p align="center">
